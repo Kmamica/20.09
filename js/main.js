@@ -3,33 +3,65 @@
 // const input = document.getElementsByClassName('margin-bottom');
 // console.log("input po klasie", input)
 const idBtn = document.getElementById('id-btn');
-
-
-
-
 idBtn.addEventListener("click", takeOrder)
+
+let order = {
+    pizza: '',
+    sosy: [, ],
+    name: '',
+    adress: '',
+    email: '',
+    tel: '',
+    text: ''
+}
 
 function takeOrder() {
     sprawdzanieSosow("sosy")
     const pomidorowy = document.getElementById('pomidorowy')
     const czosnkowy = document.getElementById('czosnkowy')
     const ostryPomidorowy = document.getElementById('ostryPomidorowy')
-    let btn = document.createElement("button");
-    let textBtn = document.createTextNode("Click me");
-    btn.setAttribute('class', 'fun');
-    btn.innerText = " Click me ";
-    console.log(btn);
-    const maindiv = document.getElementById('main-div');
-    maindiv.appendChild(btn);
-    let span = document.createElement('span');
-    span.innerText = "<button> hi hi </button>"
-    let span2 = document.createElement('span');
-    span2 = document.createElement('span');
-    span2.innerHTML = "<button> HEY HEY </button>"
-    maindiv.appendChild(span);
-    maindiv.appendChild(span2);
-    console.log(pomidorowy.checked)
+
+
+    //pobieram imie i nazwisko
+    const nameC = document.getElementById('nameC').value;
+    order.name = nameC;
+    //pobieram email
+    const email = document.getElementById('email').value;
+    order.email = email;
+    //pobieram tel
+    const tel = document.getElementById('tel').value;
+    order.tel = tel;
+    //pobieram adress
+    const adress = document.getElementById('adress').value;
+    order.adress = adress;
+    //pobieram textarea
+    const msg = document.getElementById('msg').value;
+    order.text = msg;
+
+    console.log("takeOrder -> nameC", order)
+
+
+
+
+
+    // const maindiv = document.getElementById('main-div');
+    // maindiv.appendChild(btn);
+    // let span = document.createElement('span');
+    // span.innerText = "<button> hi hi </button>"
+    // let span2 = document.createElement('span');
+    // span2 = document.createElement('span');
+    // span2.innerHTML = "<button> HEY HEY </button>"
+    // maindiv.appendChild(span);
+    // maindiv.appendChild(span2);
+    // console.log(pomidorowy.checked)
+
 }
+
+
+
+
+
+idBtn.addEventListener("click", takeOrder);
 
 function sprawdzanieSosow(nazwaKlasy) {
     const pobraneWszytkieSosyZinputu = document.getElementsByClassName(nazwaKlasy)
@@ -40,15 +72,3 @@ function sprawdzanieSosow(nazwaKlasy) {
         }
     }
 }
-
-
-// function dodawanie(a, b) {
-//     let wynik = a + b
-//     console.log(wynik)
-// }
-// dodawanie(5, 15)
-
-// dodawanie(2, 15)
-// dodawanie(7, 1885)
-// dodawanie(5, 88)
-// dodawanie(7, 7)
